@@ -3,6 +3,7 @@ package com.recharge.login.service.impl;
 
 import java.util.Optional;
 
+import com.recharge.login.payload.LoginDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,19 +22,16 @@ public class LoginServiceImpl implements LoginService {
 //		this.userRepository = userRepository;
 //	}
 
-	public String login(UserDto user) {
-		Optional<User> u= userRepository.findByUsernameAndPasswordAndIsAdmin(user.getUsername(), user.getPassword(), user.isAdmin());
-		if(u.isPresent()) {
-			return "true";
-		}else {
-			return "false";
-		}
+	public boolean login(LoginDto loginDto) {
+		Optional<User> u = userRepository.findByUsernameAndPassword(loginDto.getUsername(), loginDto.getPassword());
+		return u.isPresent();
 	}
-	
+
 	@Override
 	public User register(UserDto userDto) {
 		User user = new User();
 		user.setName(userDto.getName());
+		user.setUsername(userDto.getUsername());
 		user.setPassword(userDto.getPassword());
 		user.setAdmin(userDto.isAdmin());
 		User userCreated = userRepository.save(user);
