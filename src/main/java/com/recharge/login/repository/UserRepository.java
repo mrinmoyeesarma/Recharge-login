@@ -9,5 +9,5 @@ import com.recharge.login.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	Optional<User> findByUserNameAndPasswordAndIsAdmin(String username,String password,boolean isAdmin);
+	Optional<User> findByUsernameAndPasswordAndIsAdmin(String username,String password,boolean isAdmin);
 }

@@ -22,7 +22,7 @@ public class LoginServiceImpl implements LoginService {
 //	}
 
 	public String login(UserDto user) {
-		Optional<User> u= userRepository.findByUserNameAndPasswordAndIsAdmin(user.getUsername(), user.getPassword(), user.isAdmin());
+		Optional<User> u= userRepository.findByUsernameAndPasswordAndIsAdmin(user.getUsername(), user.getPassword(), user.isAdmin());
 		if(u.isPresent()) {
 			return "true";
 		}else {
