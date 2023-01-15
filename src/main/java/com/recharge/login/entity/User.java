@@ -25,7 +25,7 @@ public class User {
 	private String username;
 	@Column(name = "password", nullable = false)
 	private String password;
-	@Column(name = "isAdmin", nullable = false)
+	@Column(name = "is_admin", nullable = false)
 	private boolean isAdmin;
 
 	public User() {
@@ -80,6 +80,12 @@ public class User {
 
 	public void setAdmin(boolean isAdmin) {
 		this.isAdmin = isAdmin;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", isAdmin="
+				+ isAdmin + "]";
 	}
 
 }
