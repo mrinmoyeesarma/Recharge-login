@@ -1,7 +1,5 @@
 package com.recharge.login.service;
 
-import org.springframework.http.ResponseEntity;
-
 import com.recharge.login.entity.User;
 import com.recharge.login.payload.LoginDto;
 import com.recharge.login.payload.LoginResponseDto;

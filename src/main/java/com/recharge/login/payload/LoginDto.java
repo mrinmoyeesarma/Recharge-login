@@ -1,7 +1,5 @@
 package com.recharge.login.payload;
 
-import javax.persistence.Column;
-
 public class LoginDto {
 
 	private String username;

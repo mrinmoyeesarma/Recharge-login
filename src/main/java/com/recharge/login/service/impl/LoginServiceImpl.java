@@ -1,19 +1,15 @@
 package com.recharge.login.service.impl;
 
-import java.util.Optional;
-
+import com.recharge.login.entity.User;
 import com.recharge.login.payload.LoginDto;
 import com.recharge.login.payload.LoginResponseDto;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-
-import com.recharge.login.entity.User;
 import com.recharge.login.payload.UserDto;
 import com.recharge.login.repository.UserRepository;
 import com.recharge.login.service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class LoginServiceImpl implements LoginService {
