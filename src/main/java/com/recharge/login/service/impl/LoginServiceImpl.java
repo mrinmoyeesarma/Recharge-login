@@ -20,11 +20,6 @@ public class LoginServiceImpl implements LoginService {
 	@Autowired
 	private UserRepository userRepository;
 
-//	public LoginServiceImpl(UserRepository userRepository) {
-//		super();
-//		this.userRepository = userRepository;
-//	}
-
 	public LoginResponseDto login(LoginDto loginDto) {
 		LoginResponseDto loginResponseDto = new LoginResponseDto();
 		Optional<User> u = userRepository.findByUsernameAndPassword(loginDto.getUsername(), loginDto.getPassword());
@@ -51,11 +46,6 @@ public class LoginServiceImpl implements LoginService {
 			userCreated.setPassword("N/A");
 			return userCreated;
 		}
-		else {
-		      User user = null;
-			  return user;
-
-		}
-		
+		return null;
 	}
 }
